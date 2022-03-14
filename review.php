@@ -1,71 +1,84 @@
-<?php include "header.php"; ?>
-<?php include "connect.php"; ?>
-<style type="text/css">
-	tr {
-		font-size: 1.2em;
+<?php include "header.php"; ?> 
+<body>
+	
+	<!-- Start All Pages -->
+	<center> <img src="feedback.jpg" style="background-color: red"> </center>
+	<!-- End All Pages -->
+	
+	<!-- Start Contact -->
+	
+	<div class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						
+						<p>Our Main Goal is Client Satisfaction</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<form  action="" method="post">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+									<div class="help-block with-errors"></div>
+								</div>                                 
+							</div>
+							<!-- <div class="col-md-12">
+								<div class="form-group">
+									<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+									<div class="help-block with-errors"></div>
+								</div> 
+							</div> -->
+							<div class="col-md-12">
+								<div class="form-group">
+									<select class="custom-select d-block form-control" id="guest" name="rev" required data-error="Please Select Person">
+									  <option value="Exellent">Exellent</option>
+									  <option value="Good">Good</option>
+									  <option value="Poor">Poor</option>
+									  <option value="Very Poor">Very Poor</option>
+									  
+									</select>
+									<div class="help-block with-errors"></div>
+								</div> 
+							</div>
+							<div class="col-md-12">
+								<div class="form-group"> 
+									<textarea class="form-control" id="message" placeholder="Your Message" rows="4" name="desc" data-error="Write your message" required></textarea>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="submit-button text-center">
+									<button name="sb" class="btn btn-common" id="submit" type="submit">Send Message</button>
+									<div id="msgSubmit" class="h3 text-center hidden"></div> 
+									<div class="clearfix"></div> 
+								</div>
+							</div>
+						</div>            
+					</form>
+					<?php
+					if(isset($_POST['sb']))
+					{
+						$nm = $_POST['name'];
+						$rev = $_POST['rev'];
+						$des = $_POST['desc'];
+						include "connect.php";
+						mysqli_query($con,"insert into review(name, review, description) values('$nm','$rev','$des')");
+						echo "<h2 style='color:tomato; text-align:center;'>Data Addedd SuccessFully</h2>";
+					}	
+
+					?>
 
 
-	}
 
 
-	tr:hover {
-		background-color: black;
-		color: white;
 
-
-	}
-
-	th {
-		color: tomato;
-		font-size: 1.3em;
-	}
-
-	.del {
-		color: red;
-		text-decoration: none;
-	}
-
-	.del:hover {
-		color: blue;
-		text-decoration: none;
-		text-shadow: 2px 3px 2px #FFFFFF;
-	}
-
-	.content {
-		position: relative;
-		top: 100px;
-		left: 370px;
-		padding-right: 450px;
-	}
-</style>
-<div class="content">
-	<table border=1 width="100%" cellspacing="3" cellpadding="5" style="box-shadow: 5px 4px 10px 2px;">
-
-		<tr>
-			<th>ID</th>
-			<th>NAME</th>
-			<th>REVIEW</th>
-			<th>COMMENTS</th>
-			<th>REMOVE</th>
-		</tr>
-		<?php
-		$s = mysqli_query($con, "select * from review");
-		while ($r = mysqli_fetch_array($s)) {
-		?>
-			<tr align=center>
-				<td><?php echo $r['id']; ?></td>
-				<td><?php echo $r['name']; ?></td>
-				<td><?php echo $r['review']; ?></td>
-				<td><?php echo $r['description']; ?></td>
-				<td><a href="delreview.php?a=<?php echo $r['id']; ?>" class="del">DELETE</a></td>
-			</tr>
-		<?php
-		}
-		?>
-
-
-	</table>
-
-
-</div>
-<?php include "footer.php"; ?>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- End Contact -->

@@ -1,142 +1,99 @@
-<!-- <link rel="stylesheet" type="text/css" href="style2.css">
-
-<div class="h"><img src="../images/ju_cafe.png" alt="">
-</div>
-<div class="mbg">
-	<a href="after_login.php" class="menu">Parcel Clients</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="food.php" class="menu">Food Menu</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="gallery.php" class="menu">Gallery</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="review.php" class="menu">Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="food_cat.php" class="menu">Food Category</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="logout.php" class="menu" style="color: red;">Logout</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-</div>
-<br><br> -->
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"><!-- Basic -->
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="style3.css" />
-	<title>dashboard</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>JU Cafe</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
-	<div class="container">
-		<div class="navigation">
-			<ul>
-				<li>
-					<a href="#">
-						<img src="img/ju_cafe.png" width="75%" alt="" />
-					</a>
-				</li>
-				<!-- <li>
-            <a href="#">
-              <span class="icon"
-                ><ion-icon name="reorder-three-outline"></ion-icon
-              ></span>
-              <span class="title">Dashboard</span>
-            </a>
-          </li> -->
-				<li>
-					<a href="customer.php">
-						<span class="icon">
-							<ion-icon name="people-outline"></ion-icon>
-						</span>
-						<span class="title">Customer</span>
-					</a>
-				</li>
-				<li>
-					<a href="food.php">
-						<span class="icon">
-							<ion-icon name="fast-food-outline"></ion-icon>
-						</span>
-						<span class="title">Food Menu</span>
-					</a>
-				</li>
-				<!-- <li>
-					<a href="food_cat.php">
-						<span class="icon">
-							<ion-icon name="beer-outline"></ion-icon>
-						</span>
-						<span class="title">Food Category</span>
-					</a>
-				</li> -->
-				<li>
-					<a href="booking_show.php">
-						<span class="icon">
-							<ion-icon name="laptop-outline"></ion-icon>
-						</span>
-						<span class="title">Booking</span>
-					</a>
-				</li>
-				<li>
-					<a href="after_login.php">
-						<span class="icon">
-							<ion-icon name="people-outline"></ion-icon>
-						</span>
-						<span class="title">Parcel Clients</span>
-					</a>
-				</li>
-				<li>
-					<a href="gallery.php">
-						<span class="icon">
-							<ion-icon name="images-outline"></ion-icon>
-						</span>
-						<span class="title">Gallery</span>
-					</a>
-				</li>
-				<li>
-					<a href="review.php">
-						<span class="icon">
-							<ion-icon name="chatbox-outline"></ion-icon>
-						</span>
-						<span class="title">Reviews</span>
-					</a>
-				</li>
-				<li>
-					<a href="logout.php">
-						<span class="icon">
-							<ion-icon name="log-out-outline"></ion-icon>
-						</span>
-						<span class="title">Logout</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="main">
-			<div class="topbar">
-				<div class="toggle">
-					<ion-icon name="menu-outline"></ion-icon>
-				</div>
-				<div class="search">
-					<label for="">
-						<input type="text" placeholder="Search Here">
-						<ion-icon name="search-circle-outline"></ion-icon>
-					</label>
-				</div>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.php">
+					<img src="images/j.png" alt="" />
+					<p>JU CAFE</p>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.php">Menu</a></li>
+						<li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="review.php">Review</a></li>
+						<li class="nav-item"><a class="nav-link" href="booking.php">Booking</a></li>
+						<li class="nav-item"><a class="nav-link" href="./admin">Admin</a></li>
+						<div>
 
-				<div class="user">
+					<?php
+					if(isset($_SESSION['uid']))
+					{
+					?>
+					HI <?php echo $_SESSION['uid']; ?> &nbsp;&nbsp; <a href="cart.php">Cart</a>&nbsp;&nbsp; <a href="logout.php">LogOut</a>
+					<?php	
+					}
+					else
+					{	
+					?>
+					<a href="registration.php"><button class="btn1">New User</button></a>&nbsp;&nbsp;&nbsp;<a href="login.php"><button class="btn1">Login</button></a>
+					<?php
+					}
+					?>	
 
-					<img src="img/avt-img.jpg" alt="">
+					  </div>
 
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="reservation.html">Reservation</a>
+								<a class="dropdown-item" href="stuff.html">Stuff</a>
+								<a class="dropdown-item" href="gallery.html">Gallery</a>
+							</div>
+						</li> -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="blog.html">blog</a>
+								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+							</div>
+						</li> -->
+						<!--<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+					</ul>
 				</div>
 			</div>
-		</div>
-	</div>
-	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<script>
-		let list = document.querySelectorAll(".navigation li");
-
-		function activeLink(item) {
-			item.classList(remove("hovered"));
-			this.classList.add("hovered");
-		}
-		list.forEach((item) => item.addEventListener("mouseover", activeLink));
-	</script>
-</body>
-
-</html>
+		</nav>
+	</header>
+	<!-- End header -->

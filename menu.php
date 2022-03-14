@@ -1,93 +1,16 @@
 <?php session_start(); ?>
-<?php include "header.php"; ?>	
-	<!-- Start slides -->
-	<br>
-	<div id="slides" class="cover-slides">
-		<ul class="slides-container">
-			<li class="text-left">
-				<img src="images/cafe.jpg" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> JU CAFETERIA</strong></h1>
-							<p class="m-b-40">Have It Your Way,   <br> 
-							One of the greatest place</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Food Menu</a></p>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-left">
-				<img src="images/1-kathiyawadi-restaurants-1-ki1aq.jpg" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>We like  <br> to eat well.</strong></h1>
-							<p class="m-b-40">JU Cafe is serving a Authentic Food. 
-<br> 
-							Ambience is a very good with well trained staff with open kitchen concept...</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="booking.php">Booking</a></p>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-left">
-				<img src="images/inside.webp" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Chill Here <br> In Ju Cafe </strong></h1>
-							<p class="m-b-40">Wanna enjoy your breakfast<br> 
-							It is really an amazing place</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="review.php">Review</a></p>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<div class="slides-navigation">
-			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-		</div>
-	</div>
-	<!-- End slides -->
-	
-	<!-- Start About -->
-	<div class="about-section-box">
-		<div class="container">
+<?php include  "header.php"; ?>
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
-					<div class="inner-column">
-						<h1>Welcome To <span>JU Cafeteria</span></h1>
-						<h4>Little Story</h4>
-						<p>Let's enjoy the snacks 
- </p>
-						<p>Quick Bites in Savar, Quick Bites near me, Quick Bites in JU, Quick Bites in Bopal, in Ahmedabad, near me, in West Ahmedabad, in Bopal, in Ahmedabad, near me, in West Ahmedabad, in Bopal, New Year Parties in Ahmedabad, Christmas' Special in Ahmedabad,</p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="booking.php">booking</a>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<img src="images/cafe1.jfif"  width="200%" height="50%" class="img-fluid">
+				<div class="col-lg-12">
+					<h1>Special Menu</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End About -->
-	
-	<!-- Start QT -->
-	<div class="qt-box qt-background">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto text-center">
-					<p class="lead ">
-						" If you're not the one cooking, stay out of the way and compliment the chef. "
-					</p>
-					<span class="lead">Ju Cafe</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End QT -->
+	<!-- End All Pages -->
 	
 	<!-- Start Menu -->
 	<div class="menu-box">
@@ -96,12 +19,12 @@
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
 						<h2>Special Menu</h2>
-						<p>Enjoy the new Tasty</p>
+						<p>It's a spacial day and we have something spacial for u.</p>
 					</div>
 				</div>
 			</div>
 			
-			<div class="row inner-menu-box meNu">
+			<div class="row inner-menu-box">
 				<div class="col-3">
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">All</a>
@@ -109,7 +32,6 @@
 						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Snacks</</a>
 						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Lunch</a>
 
-		
 					</div>
 				</div>
 				
@@ -230,6 +152,82 @@
 									</div>
 								</div>
 								<?php } ?>
+								
+								
+								
+							</div>
+						</div>
+						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+							<div class="row">
+                             <?php include "connect.php";
+								$s = mysqli_query($con,"select * from menu where category='rise'");
+								while($r = mysqli_fetch_array($s))
+								{	
+								?>
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="admin/<?php echo $r['image']; ?>" class="img-fluid" alt="Image" style='width: 263px; height:170px;'>
+										<div class="why-text">
+											<h4><?php echo $r['title']; ?></h4>
+											<p><?php echo $r['description']; ?></p>
+											<h5>Rs <?php echo $r['price']; ?> /-</h5>
+											<h5 align="center">
+											 <?php if(isset($_SESSION['uid']))
+									{
+									?>
+											<a href="addcart.php?pid=<?php echo $r['id']; ?>&uid=<?php echo $_SESSION['uid']; ?>&price=<?php echo $r['price']; ?>">Add Cart</a></h5>
+
+									<?php
+									}
+									else
+									{
+									?>
+										<a href="login.php">Add Cart</a>
+									<?php } ?>
+	
+
+											</h5>
+										</div>
+									</div>
+								</div>
+								<?php } ?>     
+						</div>
+					</div>		
+ 
+                          
+						<div class="tab-pane fade" id="v-pills-tava" role="tabpanel" aria-labelledby="v-pills-tava-tab">
+							<div class="row">
+								<?php include "connect.php";
+								$s = mysqli_query($con,"select * from menu where category='tava'");
+								while($r = mysqli_fetch_array($s))
+								{	
+								?>
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="admin/<?php echo $r['image']; ?>" class="img-fluid" alt="Image" style='width: 263px; height:170px;'>
+										<div class="why-text">
+											<h4><?php echo $r['title']; ?></h4>
+											<p><?php echo $r['description']; ?></p>
+											<h5>Rs <?php echo $r['price']; ?> /-</h5>
+											<h5 align="center"><?php if(isset($_SESSION['uid']))
+									{
+									?>
+											<a href="addcart.php?pid=<?php echo $r['id']; ?>&uid=<?php echo $_SESSION['uid']; ?>&price=<?php echo $r['price']; ?>">Add Cart</a></h5>
+
+									<?php
+									}
+									else
+									{
+									?>
+										<a href="login.php">Add Cart</a>
+									<?php } ?></h5>
+										</div>
+									</div>
+								</div>
+								<?php } ?>	
+
+								
+							
 							</div>
 						</div>
 					</div>
@@ -237,49 +235,10 @@
 			</div>
 		</div>
 	</div>
-							
-
-			
 	<!-- End Menu -->
-	
-	<!-- Start Gallery -->
-	<div class="gallery-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Gallery</h2>
-						<p>Delicious food Pictures for JU Cafe Listed Here </p>
-					</div>
-				</div>
-			</div>
-			<div class="tz-gallery">
-				<div class="row">
-					
-					<?php
-							include "connect.php";
-							$s = mysqli_query($con,"select * from gallery order by id desc limit 6");
-							while($r = mysqli_fetch_array($s))
-							{
-					?>
-						<div class="col-sm-12 col-md-4 col-lg-4">
-						
-							<a class="lightbox" href="<?php echo "admin/".$r['image']; ?>">
-								<img class="img-fluid"  src="<?php echo "admin/".$r['image']; ?>" alt="Gallery Images" style="width: 350px; height: 250px;"
-								>
 
-								
-							</a>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Gallery -->
-	
-	<!-- Start Customer Reviews -->
-	<div class="customer-reviews-box">
+<!-- Start Customer Reviews -->
+	<!-- <div class="customer-reviews-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -298,7 +257,7 @@
 							 while($r = mysqli_fetch_array($s))
 							 {
 							 ?>
-							<div class="carousel-item text-center ">
+	                         <div class="carousel-item text-center ">
 								<div class="img-box p-1 border rounded-circle m-auto">
 									<img class="d-block w-100 rounded-circle" src="images/quotations-button.png" alt="">
 								</div>
@@ -336,6 +295,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- End Customer Reviews -->
-<?php include "footer.php"; ?>
+
+

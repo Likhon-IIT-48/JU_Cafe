@@ -1,74 +1,48 @@
-<?php include "header.php"; ?>
-<?php include "connect.php"; ?>
-<style type="text/css">
-	tr {
-		font-size: 1.2em;
+<?php include "header.php"; ?>	
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Gallery</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+	
+	<!-- Start Gallery -->
+	<div class="gallery-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Gallery</h2>
+						<p>Deliciousness jumping into the mouth</p>
+					</div>
+				</div>
+			</div>
+			<div class="tz-gallery">
+				<div class="row">
+					
+					<?php
+							include "connect.php";
+							$s = mysqli_query($con,"select * from gallery");
+							while($r = mysqli_fetch_array($s))
+							{
+					?>
+						<div class="col-sm-12 col-md-4 col-lg-4">
+						
+							<a class="lightbox" href="<?php echo "admin/".$r['image']; ?>">
+								<img class="img-fluid"  src="<?php echo "admin/".$r['image']; ?>" alt="Gallery Images" style="width: 350px; height: 250px;"
+								>
 
-	}
-
-	.content {
-		position: relative;
-		top: 100px;
-		left: 450px;
-		width: 60%;
-	}
-
-	.del {
-		color: red;
-		text-decoration: none;
-	}
-
-	.del:hover {
-		color: blue;
-		text-decoration: none;
-		text-shadow: 2px 3px 2px #FFFFFF;
-	}
-
-	.btn {
-		color: white;
-		background-color: black;
-		padding: 10px;
-		padding-right: 350px;
-	}
-</style>
-<div class="content">
-
-	<form action="" method="post" enctype="multipart/form-data">
-		<table border=0 width="100%" cellspacing="5" cellpadding="5" style="box-shadow: 5px 4px 10px 2px;">
-
-			<tr>
-				<th colspan="2">Upload Your Image Here &nbsp;&nbsp;&nbsp;&nbsp; <a href="vgallery.php">View Gallery</a></th>
-			</tr>
-			<tr>
-				<th>&nbsp;</th>
-			</tr>
-			<tr>
-				<td align="right" width="50%">Choose Image Here</td>
-				<td><input type="file" name="img" value=""></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center"><input type="submit" class="btn" name="sb" value="    Upload Now    "></td>
-				</td>
-			<tr>
-				<th>&nbsp;</th>
-			</tr>
-
-
-
-		</table>
-	</form>
-	<?php
-	if (isset($_POST['sb'])) {
-
-		$i = "img/" . $_FILES['img']['name'];
-		move_uploaded_file($_FILES['img']['tmp_name'], $i); //move file inside folder
-
-
-		include "connect.php";
-		mysqli_query($con, "insert into gallery(image)values('$i')") or die(mysqli_error($con));
-		echo "<div style='padding:15px; color:red; background-color:black; font-size:1.2em; border-radius:10px;'>Data Uploaded SuccessFully....</div>";
-	}
-	?>
-	<br><br>
-</div>
-<?php include "footer.php"; ?>
+								
+							</a>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Gallery
